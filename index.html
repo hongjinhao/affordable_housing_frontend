@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affordable Housing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1> Welcome to the CDLAC award prediction</h1>
+        <div> Just fill up some information about your property to get a prediction! </div>
+        <div id="health-status"></div>
+        <form id="prediction-form">
+            <div class="form-group">
+                <label> Average Targeted Affordability (%) </label>
+                <input type="number" id="avg_targeted_affordability" step="0.1" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label> CDLAC Total Points </label>
+                <input type="number" id="CDLAC_total_points_score" min="0" required>
+            </div>
+            <div class="form-group">
+                <label> CDLAC Tie-Breaker Self Score </label>
+                <input type="number" id="CDLAC_tie_breaker_self_score" step="0.1" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="bond_request_amount">Bond Request Amount ($M)</label>
+                <input type="number" id="bond_request_amount" name="bond_request_amount" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="homeless_percent">Homeless Percent (%)</label>
+                <input type="number" id="homeless_percent" name="homeless_percent" step="0.1" min="0" max="100"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="construction_type">Construction Type</label>
+                <select id="construction_type" name="construction_type" required>
+                    <option value="New Construction">New Construction</option>
+                    <option value="Acq and Rehabilitation">Acq and Rehabilitation</option>
+                    <option value="Rehabilitation">Rehabilitation</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="housing_type">Housing Type</label>
+                <select id="housing_type" name="housing_type" required>
+                    <option value="Large Family">Large Family</option>
+                    <option value="Non-Targeted">Non-Targeted</option>
+                    <option value="Seniors">Seniors</option>
+                    <option value="Special Needs">Special Needs</option>
+                    <option value="At-Risk">At-Risk</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="CDLAC_pool_type">CDLAC Pool Type</label>
+                <select id="CDLAC_pool_type" name="CDLAC_pool_type" required>
+                    <option value="New Construction">New Construction</option>
+                    <option value="Preservation">Preservation</option>
+                    <option value="Other Rehabilitation">Other Rehabilitation</option>
+                    <option value="Rural">Rural</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="new_construction_set_aside">New Construction Set Aside</label>
+                <select id="new_construction_set_aside" name="new_construction_set_aside" required>
+                    <option value="none">None</option>
+                    <option value="Homeless, ELI/VLI">Homeless, ELI/VLI</option>
+                    <option value="ELI/VLI">ELI/VLI</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="CDLAC_region">CDLAC Region</label>
+                <select id="CDLAC_region" name="CDLAC_region" required>
+                    <option
+                        value="Bay Area (Alameda, Contra Costa, Marin, San Francisco, San Mateo, Santa Clara, and Santa Cruz Counties)">
+                        Bay Area
+                    </option>
+                    <option value="City of Los Angeles">City of Los Angeles</option>
+                    <option
+                        value="Coastal (Monterey, Napa, Orange, San Benito, San Diego, San Luis Obispo, Santa Barbara, Sonoma, and Ventura Counties) ">
+                        Coastal</option>
+                    <option
+                        value="Inland (Fresno, Imperial, Kern, Kings, Madera, Merced, Riverside, San Bernardino, Stanislaus, and Tulare Counties)">
+                        Inland</option>
+                    <option
+                        value="Northern (Butte, El Dorado, Placer, Sacramento, San Joaquin, Shasta, Solano, Sutter, Yuba, and Yolo Counties)">
+                        Northern</option>
+                    <option value="Balance of Los Angeles County">Balance of LA County</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict Funding</button>
+        </form>
+        <div id="result"></div>
+
+    </div>
+    <!-- script is loaded in after html and css is loaded -->
+    <script src="script.js"></script>
+</body>
+
+</html>
