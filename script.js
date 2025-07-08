@@ -1,4 +1,4 @@
-const apiBaseUrl = 'http://13.57.238.154:8000';
+const apiBaseUrl = 'http://localhost:8000';
 const resultDiv = document.getElementById('result');
 const healthStatusDiv = document.getElementById('health-status');
 const form = document.getElementById('prediction-form');
@@ -33,7 +33,7 @@ form.addEventListener('submit', async (event) => {
         avg_targeted_affordability: parseFloat(formData.get('avg_targeted_affordability')),
         CDLAC_total_points_score: parseInt(formData.get('CDLAC_total_points_score')),
         CDLAC_tie_breaker_self_score: parseFloat(formData.get('CDLAC_tie_breaker_self_score')),
-        bond_request_amount: parseFloat(formData.get('bond_request_amount')),
+        bond_request_amount: parseFloat(formData.get('bond_request_amount')) * 1000000,
         homeless_percent: parseFloat(formData.get('homeless_percent')),
         construction_type: formData.get('construction_type'),
         housing_type: formData.get('housing_type'),

@@ -15,16 +15,18 @@
         <div id="health-status"></div>
         <form id="prediction-form">
             <div class="form-group">
-                <label> Average Targeted Affordability (%) </label>
-                <input type="number" id="avg_targeted_affordability" step="0.1" min="0" max="1" required>
+                <label for="avg_targeted_affordability"> Average Targeted Affordability </label>
+                <input type="number" id="avg_targeted_affordability" name="avg_targeted_affordability" step="0.1"
+                    min="0" max="1" required>
             </div>
             <div class="form-group">
-                <label> CDLAC Total Points </label>
-                <input type="number" id="CDLAC_total_points_score" min="0" required>
+                <label for="CDLAC_total_points_score">CDLAC Total Points </label>
+                <input type="number" id="CDLAC_total_points_score" name="CDLAC_total_points_score" min="0" required>
             </div>
             <div class="form-group">
-                <label> CDLAC Tie-Breaker Self Score </label>
-                <input type="number" id="CDLAC_tie_breaker_self_score" step="0.1" min="0" required>
+                <label for="CDLAC_tie_breaker_self_score"> CDLAC Tie-Breaker Self Score </label>
+                <input type="number" id="CDLAC_tie_breaker_self_score" name="CDLAC_tie_breaker_self_score" step="0.1"
+                    min="0" required>
             </div>
             <div class="form-group">
                 <label for="bond_request_amount">Bond Request Amount ($M)</label>
@@ -40,7 +42,7 @@
                 <select id="construction_type" name="construction_type" required>
                     <option value="New Construction">New Construction</option>
                     <option value="Acq and Rehabilitation">Acq and Rehabilitation</option>
-                    <option value="Rehabilitation">Rehabilitation</option>
+                    <option value="Adaptive Reuse">Adaptive Reuse</option>
                 </select>
             </div>
             <div class="form-group">
@@ -65,7 +67,7 @@
             <div class="form-group">
                 <label for="new_construction_set_aside">New Construction Set Aside</label>
                 <select id="new_construction_set_aside" name="new_construction_set_aside" required>
-                    <option value="none">None</option>
+                    <option value="none">none</option>
                     <option value="Homeless, ELI/VLI">Homeless, ELI/VLI</option>
                     <option value="ELI/VLI">ELI/VLI</option>
                 </select>
