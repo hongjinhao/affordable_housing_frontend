@@ -6,7 +6,7 @@ const form = document.getElementById('prediction-form');
 // Check API health on page load
 async function checkHealth() {
     try {
-        const response = await fetch(`/health`);
+        const response = await fetch(`/api/health`);
         console.log("debug")
         if (response.ok) {
             healthStatusDiv.textContent = 'API Status: Healthy';
