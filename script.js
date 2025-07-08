@@ -9,7 +9,8 @@ async function checkHealth() {
         const response = await fetch(`/api/health`);
         console.log("debug")
         if (response.ok) {
-            healthStatusDiv.textContent = 'API Status: Healthy';
+            const result = await response.json();
+            healthStatusDiv.textContent = `API Status: ${result.status || 'Healthy'}`;
             healthStatusDiv.classList.add('online');
             healthStatusDiv.style.display = 'block';
         } else {
