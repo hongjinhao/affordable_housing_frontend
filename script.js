@@ -24,7 +24,39 @@ async function checkHealth() {
         healthStatusDiv.style.display = 'block';
     }
 }
+async function warmUpPredict() {
+    try {
+        const dummyData = {
+            avg_targeted_affordability: 0.5,
+            CDLAC_total_points_score: 120,
+            CDLAC_tie_breaker_self_score: 1.0,
+            bond_request_amount: 34000000.0,
+            homeless_percent: 0.0,
+            construction_type: "New Construction",
+            housing_type: "Large Family",
+            CDLAC_pool_type: "New Construction",
+            new_construction_set_aside: "none",
+            CDLAC_region: "City of Los Angeles"
+        };
 
+        const response = await fetch('https://vt98nftsz8.execute-api.us-west-1.amazonaws.com/test/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dummyData)
+        });
+        console.log("Warm-up predict response:", response);
+        if (response.ok) {
+            console.log("Warm-up successful");
+        } else {
+            const errorBody = await response.json(); // Get error details
+            console.log("Warm-up failed:", response.status, errorBody);
+        }
+    } catch (error) {
+        console.log("Warm-up error:", error.message);
+    }
+}
 // Handle form submission
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -73,3 +105,4 @@ form.addEventListener('submit', async (event) => {
 
 // Run health check on page load
 checkHealth();
+warmUpPredict();
