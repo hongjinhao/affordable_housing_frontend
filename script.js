@@ -6,7 +6,7 @@ const form = document.getElementById('prediction-form');
 // Check API health on page load
 async function checkHealth() {
     try {
-        const response = await fetch(`/api/health`);
+        const response = await fetch(`https://vt98nftsz8.execute-api.us-west-1.amazonaws.com/test/health`);
         console.log("debug")
         if (response.ok) {
             const result = await response.json();
@@ -14,9 +14,11 @@ async function checkHealth() {
             healthStatusDiv.classList.add('online');
             healthStatusDiv.style.display = 'block';
         } else {
+            // can fetch but response is bad
             throw new Error('API is down');
         }
     } catch (error) {
+        // cannot fetch from API at all OR response is bad
         healthStatusDiv.textContent = `API Status: Error - ${error.message}`;
         healthStatusDiv.classList.add('offline');
         healthStatusDiv.style.display = 'block';
@@ -44,7 +46,7 @@ form.addEventListener('submit', async (event) => {
     };
 
     try {
-        const response = await fetch(`/api/predict`, {
+        const response = await fetch(`https://vt98nftsz8.execute-api.us-west-1.amazonaws.com/test/predict`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
