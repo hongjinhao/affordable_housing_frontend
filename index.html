@@ -15,26 +15,27 @@
         <div id="health-status"></div>
         <form id="prediction-form">
             <div class="form-group">
-                <label for="avg_targeted_affordability"> Average Targeted Affordability </label>
+                <label for="avg_targeted_affordability"> Average Targeted Affordability [0 to 1]</label>
                 <input type="number" id="avg_targeted_affordability" name="avg_targeted_affordability" step="0.1"
-                    min="0" max="1" required>
+                    min="0" max="1" value="0.5" required>
             </div>
             <div class="form-group">
-                <label for="CDLAC_total_points_score">CDLAC Total Points </label>
-                <input type="number" id="CDLAC_total_points_score" name="CDLAC_total_points_score" min="0" required>
+                <label for="CDLAC_total_points_score">CDLAC Total Points [0 to 140]</label>
+                <input type="number" id="CDLAC_total_points_score" name="CDLAC_total_points_score" min="0" value="120"
+                    required>
             </div>
             <div class="form-group">
-                <label for="CDLAC_tie_breaker_self_score"> CDLAC Tie-Breaker Self Score </label>
-                <input type="number" id="CDLAC_tie_breaker_self_score" name="CDLAC_tie_breaker_self_score" step="0.1"
-                    min="0" required>
+                <label for="CDLAC_tie_breaker_self_score"> CDLAC Tie-Breaker Self Score [0 to 2]</label>
+                <input type="number" id="CDLAC_tie_breaker_self_score" name="CDLAC_tie_breaker_self_score" value="1"
+                    step="0.1" min="0" required>
             </div>
             <div class="form-group">
-                <label for="bond_request_amount">Bond Request Amount ($M)</label>
-                <input type="number" id="bond_request_amount" name="bond_request_amount" min="0" required>
+                <label for="bond_request_amount">Bond Request Amount ($M) [0 to 100]</label>
+                <input type="number" id="bond_request_amount" name="bond_request_amount" min="0" value="34" required>
             </div>
             <div class="form-group">
-                <label for="homeless_percent">Homeless Percent (%)</label>
-                <input type="number" id="homeless_percent" name="homeless_percent" step="0.1" min="0" max="100"
+                <label for="homeless_percent">Homeless Percent (%) [0 to 100]</label>
+                <input type="number" id="homeless_percent" name="homeless_percent" step="1" min="0" max="100" value="0"
                     required>
             </div>
             <div class="form-group">
